@@ -1,0 +1,73 @@
+{
+  "xiaoliu_skills": {
+    "version": "13.0",
+    "last_updated": "2025-10-03",
+    "description": "小柳技能包清单 - 眼睛和手的代码模块",
+    
+    "vision_skills": {
+      "description": "视觉能力 - 小柳的眼睛",
+      "modules": [
+        {
+          "name": "screen_capture",
+          "file": "vision/screen_capture.py",
+          "capability": "屏幕截图",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/vision/screen_capture.py"
+        },
+        {
+          "name": "element_detector",
+          "file": "vision/element_detector.py",
+          "capability": "界面元素检测",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/vision/element_detector.py"
+        },
+        {
+          "name": "ocr_engine",
+          "file": "vision/ocr_engine.py",
+          "capability": "文字识别OCR",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/vision/ocr_engine.py"
+        },
+        {
+          "name": "vision_system",
+          "file": "vision/vision_system.py",
+          "capability": "完整视觉系统",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/vision/vision_system.py"
+        }
+      ]
+    },
+    
+    "action_skills": {
+      "description": "动作能力 - 小柳的手",
+      "modules": [
+        {
+          "name": "mouse_controller",
+          "file": "action/mouse_controller.py",
+          "capability": "鼠标控制",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/action/mouse_controller.py"
+        },
+        {
+          "name": "keyboard_controller",
+          "file": "action/keyboard_controller.py",
+          "capability": "键盘控制",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/action/keyboard_controller.py"
+        },
+        {
+          "name": "window_manager",
+          "file": "action/window_manager.py",
+          "capability": "窗口管理",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/action/window_manager.py"
+        },
+        {
+          "name": "action_system",
+          "file": "action/action_system.py",
+          "capability": "完整动作系统",
+          "url": "http://daxiak:zyy122628@43.142.176.53:8888/skills/action/action_system.py"
+        }
+      ]
+    },
+    
+    "upgrade_info": {
+      "auto_check": true,
+      "check_interval_hours": 24,
+      "backup_before_upgrade": true
+    }
+  }
+}
