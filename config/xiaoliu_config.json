@@ -1,0 +1,73 @@
+{
+    "version": "1.0.0",
+    "config_name": "小柳全局配置",
+    "last_updated": "2025-10-03T16:00:00",
+    "global_paths": {
+        "memory_root": "D:\\xiaoliu\\memory",
+        "config_root": "D:\\xiaoliu\\config",
+        "projects_root": "D:\\xiaoliu\\projects",
+        "data_root": "D:\\xiaoliu\\data",
+        "user_rules_root": "D:\\xiaoliu\\user_rules"
+    },
+    "memory_files": {
+        "permanent_iron_rules": "D:\\xiaoliu\\memory\\permanent_iron_rules.json",
+        "success_cases": "D:\\xiaoliu\\memory\\success_cases.json",
+        "failure_lessons": "D:\\xiaoliu\\memory\\failure_lessons.json",
+        "user_preferences": "D:\\xiaoliu\\memory\\user_preferences.json",
+        "module_registry": "D:\\xiaoliu\\memory\\module_registry.json",
+        "bug_fix_history": "D:\\xiaoliu\\memory\\bug_fix_history.json"
+    },
+    "auto_load_rules": {
+        "on_conversation_start": true,
+        "on_development_task": true,
+        "on_bug_fixing": true,
+        "refresh_interval_rounds": 15,
+        "refresh_interval_chars": 15000,
+        "refresh_interval_minutes": 30
+    },
+    "execution_monitoring": {
+        "real_time_check": true,
+        "violation_logging": true,
+        "auto_correction": true,
+        "performance_tracking": true
+    },
+    "cross_window_sharing": {
+        "enabled": true,
+        "description": "所有窗口共享全局铁律和记忆",
+        "sync_mode": "real_time",
+        "conflict_resolution": "latest_wins"
+    },
+    "project_inheritance": {
+        "inherit_global_rules": true,
+        "inherit_success_cases": true,
+        "inherit_failure_lessons": true,
+        "inherit_user_preferences": true
+    },
+    "auto_save_triggers": {
+        "new_iron_rule_detected": true,
+        "bug_fix_success": true,
+        "module_completion": true,
+        "important_decision": true,
+        "conversation_end": true
+    },
+    "notification_settings": {
+        "rule_violation_alert": true,
+        "new_rule_added_notify": true,
+        "execution_rate_report": "daily",
+        "memory_sync_confirm": false
+    },
+    "performance_targets": {
+        "critical_rules_execution": "100%",
+        "high_rules_execution": "95%+",
+        "medium_rules_execution": "90%+",
+        "overall_execution_rate": "90-93%",
+        "optimization_goal": "95%+"
+    },
+    "improvement_tracking": {
+        "baseline_execution_rate": "87-90%",
+        "current_execution_rate": "90-93%",
+        "improvement_from_positive_expression": "+3-5%",
+        "improvement_from_global_sharing": "+2-3%",
+        "target_execution_rate": "95%+"
+    }
+}
