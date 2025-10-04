@@ -1,0 +1,26 @@
+{
+  "iron_rule_40": {
+    "title": "技能升级强制上传",
+    "description": "任何小柳技能包的升级、修改、优化，必须立即自动上传到云端服务器，不允许只保存在本地",
+    "severity": "Critical",
+    "enforcement": "Mandatory",
+    "triggers": [
+      "修改vision模块任何文件",
+      "修改action模块任何文件",
+      "添加新技能模块",
+      "优化现有技能",
+      "修复技能包bug"
+    ],
+    "required_actions": [
+      "1. 立即上传修改后的文件到云端/skills/目录",
+      "2. 更新skill_manifest.json版本号",
+      "3. 提交Git记录变更",
+      "4. 验证云端文件可访问",
+      "5. 输出上传确认报告"
+    ],
+    "violation_consequence": "技能升级未同步到云端 = 其他窗口/电脑无法获得改进 = 系统退化",
+    "auto_check": true,
+    "check_command": "在升级技能后必须显示：✅ 技能已上传到云端",
+    "expected_improvement": "确保所有技能升级立即同步，多窗口/多电脑始终使用最新版本"
+  }
+}
