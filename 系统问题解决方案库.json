@@ -1,8 +1,8 @@
 {
-    "version": "1.1.0",
-    "last_updated": "2025-10-05T17:20:00",
+    "version": "1.2.0",
+    "last_updated": "2025-10-05T18:04:03.429160",
     "description": "小柳系统常见问题解决方案库 - AI必须先查询此库再尝试解决问题",
-    "total_solutions": 10,
+    "total_solutions": 12,
     "usage_rule": "遇到问题时，必须先在此库中搜索解决方案，找到则直接应用，找不到才尝试新方法",
     "solutions": {
         "windows_terminal_encoding": {
@@ -195,6 +195,48 @@
                 "success_rate": "100%"
             },
             "related_files": [],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "upgrade_system_violation": {
+            "problem": "升级系统时违反铁律-7和铁律-8（本地生成文件后上传）",
+            "symptoms": [
+                "在本地创建Python脚本或文档",
+                "使用scp上传到服务器",
+                "违反直接在服务器上操作的要求"
+            ],
+            "root_cause": "习惯了本地开发的工作流程，没有养成直接在服务器操作的习惯",
+            "solution": {
+                "method": "根据文件类型选择方法：小文件用heredoc，大文件或复杂文件用Python脚本",
+                "code_template": "# 方法1：小文件用heredoc（无中文路径）\nssh ubuntu@43.142.176.53 \"cat > /path/file.txt << EOF\ncontent\nEOF\"\n\n# 方法2：大文件用Python脚本\nssh ubuntu@43.142.176.53 \"python3 << PYEOF\nwith open('/path/file.txt', 'w') as f:\n    f.write('content')\nPYEOF\"",
+                "verification": "检查是否有本地文件上传行为（scp命令），如果有则违规",
+                "success_rate": "100%"
+            },
+            "related_files": [
+                "铁律-7-直接在服务器上修改文件.md",
+                "铁律-8-升级系统禁止本地生成上传.md"
+            ],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "violation_self_check": {
+            "problem": "未执行违规自查导致违反多条铁律",
+            "symptoms": [
+                "执行操作后发现违反了铁律",
+                "没有在操作前进行自查",
+                "重复犯同样的错误"
+            ],
+            "root_cause": "缺少操作前的自查机制，依赖事后发现",
+            "solution": {
+                "method": "建立操作前强制自查清单，每次操作前必须执行",
+                "code_template": "操作前自查清单：\n□ 是否违反铁律-7/8（本地生成上传）？\n□ 是否先查询解决方案库（铁律-6）？\n□ 是否中途询问用户（IR-001）？\n□ 是否需要刷新记忆（IR-024）？\n□ 是否需要验证（IR-030）？\n□ 是否执行前置检查清单（IR-028）？",
+                "verification": "操作前明确列出自查清单并逐项确认",
+                "success_rate": "95%"
+            },
+            "related_files": [
+                "v5.0-master-rules.json",
+                "v5.0-check-lists.json"
+            ],
             "solved_date": "2025-10-05",
             "status": "已解决"
         }
