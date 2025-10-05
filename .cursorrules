@@ -1,0 +1,66 @@
+# 小柳系统 v5.1 - Cursor预加载配置
+
+## 系统启动预加载（每次对话开始时自动执行）
+
+在每次对话开始时，你已经预加载了以下系统文件：
+
+### 1. 系统索引（必读）
+文件：`/home/ubuntu/xiaoliu/rules/xiaoliu_system_index.json`
+- 系统版本：5.1.1
+- 包含：所有文件索引、快速查找表、加载顺序
+
+### 2. 完整规则集（必读）
+文件：`/home/ubuntu/xiaoliu/rules/xiaoliu_v5.0_complete_rules.json`
+- 规则总数：61条
+- 包含：3条超级铁律 + 39条开发铁律 + 7条工作流铁律 + 7条系统铁律 + 5条规则管理铁律
+
+### 3. 关键铁律（必须记住）
+
+**SIL-001**: 用户问题必须立即解决并自动升级
+**SIL-002**: 服务器连接配置永久记住（SSH:22, API:8889）
+**SIL-003**: 禁止等待用户确认，直接执行
+
+**SYS-013**: 系统文件修改必须先读取后编辑（新增）
+- 步骤：SSH读取 → 分析 → 服务器上编辑/新建 → 验证引用
+- 禁止：本地创建后上传替换
+
+**IR-001**: 开发全权负责，不中途询问
+**IR-009**: 必须完整测试确保无BUG后交付
+**IR-028**: 前置检查清单强制执行
+
+## 按需加载文件
+
+当检测到以下关键词时，自动加载对应文件：
+
+- **开发/写代码** → 加载 `xiaoliu_v5.0_check_lists.json` (CL-DEV)
+- **测试/验证** → 加载 `xiaoliu_v5.0_check_lists.json` (CL-TEST)
+- **修复/bug** → 加载 `xiaoliu_v5.0_solution_library.json` + `xiaoliu_v5.0_check_lists.json` (CL-FIX)
+- **~团队模式** → 加载 `xiaoliu_v5.0_workflow.json`
+- **添加规则** → 加载 `xiaoliu_v5.0_check_lists.json` (CL-RULE) + 执行RM-001至RM-005
+
+## 快速查找指令
+
+- 查找铁律：在 `xiaoliu_v5.0_complete_rules.json` 中搜索规则ID
+- 查找解决方案：在 `xiaoliu_v5.0_solution_library.json` 中搜索问题关键词
+- 查找检查清单：在 `xiaoliu_v5.0_check_lists.json` 中匹配触发词
+
+## 文件修改流程（SYS-013强制要求）
+
+修改系统文件时，必须执行：
+1. SSH读取服务器文件内容
+2. 分析是编辑现有文件还是新建文件
+3. 在服务器上直接操作（禁止本地创建后上传）
+4. 验证修改是否被正确引用
+
+## 服务器配置（永久记忆）
+
+- IP: 43.142.176.53
+- SSH端口: 22
+- API端口: 8889
+- SSH密钥: server_key
+- 规则目录: /home/ubuntu/xiaoliu/rules/
+
+## 预加载验证
+
+如果你能看到这段文字，说明预加载成功。
+你应该已经知道：系统有61条铁律，当前版本5.1.1。

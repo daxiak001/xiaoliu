@@ -1,0 +1,167 @@
+{
+    "version": "5.0.0",
+    "last_updated": "2025-10-05T17:40:33.002560",
+    "description": "小柳系统v5.0技能模块索引 - 引用第7-9轮升级的能力模块",
+    "skill_categories": {
+        "architecture_design": {
+            "name": "架构设计能力（第7轮）",
+            "modules": [
+                {
+                    "id": "SKILL-001",
+                    "name": "架构模式识别与推荐",
+                    "file": "architecture_analyzer.py"
+                },
+                {
+                    "id": "SKILL-002",
+                    "name": "遗留系统重构策略",
+                    "file": "refactoring_strategist.py"
+                },
+                {
+                    "id": "SKILL-003",
+                    "name": "性能优化决策树",
+                    "file": "Round7_Q47-52.py"
+                },
+                {
+                    "id": "SKILL-004",
+                    "name": "灰度发布策略",
+                    "file": "Round7_Q47-52.py"
+                },
+                {
+                    "id": "SKILL-005",
+                    "name": "服务降级与熔断",
+                    "file": "Round7_Q47-52.py"
+                },
+                {
+                    "id": "SKILL-006",
+                    "name": "分布式事务",
+                    "file": "Round7_Q47-52.py"
+                },
+                {
+                    "id": "SKILL-007",
+                    "name": "缓存策略设计",
+                    "file": "Round7_Q47-52.py"
+                },
+                {
+                    "id": "SKILL-008",
+                    "name": "日志系统设计",
+                    "file": "Round7_Q47-52.py"
+                }
+            ],
+            "source": "第7轮升级（问题45-52）"
+        },
+        "cursor_optimization": {
+            "name": "Cursor使用优化（第8轮）",
+            "modules": [
+                {
+                    "id": "SKILL-009",
+                    "name": "上下文管理优化",
+                    "file": "cursor_context_optimizer.py"
+                },
+                {
+                    "id": "SKILL-010",
+                    "name": "工具调用优化",
+                    "file": "cursor_tool_optimizer.py"
+                },
+                {
+                    "id": "SKILL-011",
+                    "name": "代码理解优化",
+                    "file": "Round8_Q55-60.py"
+                },
+                {
+                    "id": "SKILL-012",
+                    "name": "避免重复劳动",
+                    "file": "Round8_Q55-60.py"
+                },
+                {
+                    "id": "SKILL-013",
+                    "name": "并行能力最大化",
+                    "file": "Round8_Q55-60.py"
+                },
+                {
+                    "id": "SKILL-014",
+                    "name": "User Rules执行",
+                    "file": "cursor_best_practices.py"
+                },
+                {
+                    "id": "SKILL-015",
+                    "name": "文件编辑成功率",
+                    "file": "cursor_best_practices.py"
+                },
+                {
+                    "id": "SKILL-016",
+                    "name": "Cursor优势利用",
+                    "file": "cursor_best_practices.py"
+                }
+            ],
+            "source": "第8轮升级（问题53-60）"
+        },
+        "advanced_techniques": {
+            "name": "高级技巧（第9轮）",
+            "modules": [
+                {
+                    "id": "SKILL-017",
+                    "name": "Token成本优化",
+                    "file": "cursor_token_optimizer.py"
+                },
+                {
+                    "id": "SKILL-018",
+                    "name": "补全质量提升",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-019",
+                    "name": "多窗口协作",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-020",
+                    "name": "文件监控保障",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-021",
+                    "name": "错误诊断",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-022",
+                    "name": "代码审查",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-023",
+                    "name": "跨项目学习",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-024",
+                    "name": "大文件处理",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-025",
+                    "name": "依赖追踪",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-026",
+                    "name": "测试质量",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-027",
+                    "name": "安全重构",
+                    "file": "cursor_advanced_issues.py"
+                },
+                {
+                    "id": "SKILL-028",
+                    "name": "性能分析",
+                    "file": "cursor_advanced_issues.py"
+                }
+            ],
+            "source": "第9轮升级（问题61-72）"
+        }
+    },
+    "total_skills": 28,
+    "usage_note": "这些技能模块的代码存在于/home/ubuntu/xiaoliu/skills/目录中，主规则文件通过此索引引用"
+}

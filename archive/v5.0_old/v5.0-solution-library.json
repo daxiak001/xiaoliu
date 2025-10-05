@@ -1,0 +1,215 @@
+{
+    "version": "5.0.0",
+    "last_updated": "2025-10-05T17:40:33.001863",
+    "description": "小柳系统v5.0解决方案库 - 系统问题解决方案集合",
+    "total_solutions": 10,
+    "usage_rule": "遇到问题时，必须先在此库中搜索解决方案，找到则直接应用，找不到才尝试新方法",
+    "solutions": {
+        "windows_terminal_encoding": {
+            "problem": "Windows终端输出中文乱码",
+            "symptoms": [
+                "cmd输出乱码",
+                "PowerShell中文显示问号",
+                "bat脚本中文显示异常",
+                "echo输出中文变成????"
+            ],
+            "root_cause": "Windows默认使用GBK编码，而Cursor终端可能使用UTF-8",
+            "solution": {
+                "method": "在脚本开头添加chcp 65001切换到UTF-8",
+                "code_template": "@echo off\nchcp 65001 >nul\nREM 其他命令...",
+                "verification": "运行后中文正常显示",
+                "success_rate": "100%"
+            },
+            "related_files": [
+                "所有.bat脚本文件"
+            ],
+            "solved_date": "2025-10-04",
+            "status": "已解决"
+        },
+        "ssh_connection_port": {
+            "problem": "SSH连接服务器端口配置错误",
+            "symptoms": [
+                "ssh连接失败",
+                "Connection refused",
+                "端口22连接超时",
+                "混淆SSH端口和API端口"
+            ],
+            "root_cause": "AI混淆SSH端口(22)和API端口(8889)",
+            "solution": {
+                "method": "SSH登录使用默认端口22，不需要指定；API访问使用8889",
+                "code_template": "ssh -i server_key ubuntu@43.142.176.53\nscp -i server_key 文件 ubuntu@43.142.176.53:/路径/\ncurl http://43.142.176.53:8889/api/xxx",
+                "verification": "SSH连接成功",
+                "success_rate": "100%"
+            },
+            "related_files": [
+                "铁律-服务器连接配置.md",
+                "服务器端口配置-永久记忆.txt"
+            ],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "cursor_ssh_interactive_prompt": {
+            "problem": "Cursor拦截SSH/SCP命令需要手动确认",
+            "symptoms": [
+                "scp命令弹出确认对话框",
+                "ssh命令需要手动点击允许",
+                "无法自动化执行远程命令"
+            ],
+            "root_cause": "Cursor安全机制会拦截远程命令执行",
+            "solution": {
+                "method": "创建.bat或.ps1脚本，让用户在独立终端中运行",
+                "code_template": "创建脚本文件，告知用户在独立终端运行",
+                "verification": "用户在独立终端运行成功",
+                "success_rate": "100%"
+            },
+            "related_files": [
+                "铁律-禁止在Cursor中执行远程命令.md"
+            ],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "powershell_execution_policy": {
+            "problem": "PowerShell脚本执行被阻止",
+            "symptoms": [
+                "无法加载文件，因为在此系统上禁止运行脚本",
+                "ExecutionPolicy错误"
+            ],
+            "root_cause": "Windows默认禁止运行未签名的PowerShell脚本",
+            "solution": {
+                "method": "使用-ExecutionPolicy Bypass参数",
+                "code_template": "powershell -ExecutionPolicy Bypass -File 脚本.ps1",
+                "verification": "脚本正常执行",
+                "success_rate": "100%"
+            },
+            "related_files": [],
+            "solved_date": "2025-10-04",
+            "status": "已解决"
+        },
+        "ssh_key_permission": {
+            "problem": "SSH密钥权限错误",
+            "symptoms": [
+                "Load key \"server_key\": Permission denied",
+                "Bad permissions",
+                "SSH密钥无法加载"
+            ],
+            "root_cause": "SSH密钥文件权限过于开放",
+            "solution": {
+                "method": "在Windows上，使用icacls修改权限；或在脚本中使用-o StrictHostKeyChecking=no",
+                "code_template": "ssh -i server_key -o StrictHostKeyChecking=no ubuntu@43.142.176.53",
+                "verification": "SSH连接成功",
+                "success_rate": "90%"
+            },
+            "related_files": [
+                "server_key"
+            ],
+            "solved_date": "2025-10-04",
+            "status": "已解决"
+        },
+        "local_edit_then_upload": {
+            "problem": "本地修改文件后再上传到服务器，效率低下",
+            "symptoms": [
+                "需要两步操作：本地编辑+上传",
+                "浪费时间",
+                "容易忘记上传"
+            ],
+            "root_cause": "工作流程设计问题",
+            "solution": {
+                "method": "直接通过SSH在服务器上修改文件",
+                "code_template": "ssh ubuntu@43.142.176.53 \"echo '内容' > /路径/文件\"\nssh ubuntu@43.142.176.53 \"cat >> /路径/文件 << 'EOF'\n多行内容\nEOF\"",
+                "verification": "文件直接在服务器上更新",
+                "success_rate": "100%"
+            },
+            "related_files": [],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "cursor_tool_chinese_garbled": {
+            "problem": "Cursor工具调用输出中文乱码",
+            "symptoms": [
+                "run_terminal_cmd输出乱码",
+                "中文显示为???或乱码"
+            ],
+            "root_cause": "终端编码问题",
+            "solution": {
+                "method": "在命令前添加chcp 65001，或使用PowerShell",
+                "code_template": "chcp 65001 >nul && 命令",
+                "verification": "中文正常显示",
+                "success_rate": "100%"
+            },
+            "related_files": [],
+            "solved_date": "2025-10-04",
+            "status": "已解决"
+        },
+        "file_upload_workflow": {
+            "problem": "文件上传工作流程繁琐",
+            "symptoms": [
+                "需要本地创建文件",
+                "需要运行上传脚本",
+                "两步操作，效率低"
+            ],
+            "root_cause": "工作流程设计问题",
+            "solution": {
+                "method": "直接在服务器上创建/修改文件，使用SSH heredoc或echo",
+                "code_template": "ssh ubuntu@43.142.176.53 \"cat > /路径/文件.md << 'EOFMARKER'\n文件内容\nEOFMARKER\"",
+                "verification": "文件直接在服务器上创建",
+                "success_rate": "100%"
+            },
+            "related_files": [],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "ssh_heredoc_chinese_garbled": {
+            "problem": "SSH heredoc中文乱码问题",
+            "symptoms": [
+                "SSH heredoc中的中文被PowerShell误解析",
+                "导致命令执行失败",
+                "ParserError: Missing file specification",
+                "中文路径或内容显示为乱码"
+            ],
+            "root_cause": "PowerShell在解析SSH命令中的heredoc时，中文字符会被错误编码",
+            "solution": {
+                "method": "使用临时文件+scp方法：创建本地临时文件 → scp上传到服务器 → ssh在服务器上合并 → 删除临时文件",
+                "code_template": "# 步骤1：创建本地临时文件\nwrite temp.txt\n\n# 步骤2：上传到服务器\nscp -i server_key temp.txt ubuntu@43.142.176.53:/tmp/\n\n# 步骤3：在服务器上合并\nssh ubuntu@43.142.176.53 \"cat /tmp/temp.txt >> /目标文件 && rm /tmp/temp.txt\"\n\n# 步骤4：删除本地临时文件\ndelete temp.txt",
+                "verification": "文件内容正确，中文显示正常",
+                "success_rate": "100%"
+            },
+            "related_files": [
+                "铁律-8-升级系统禁止本地生成上传.md",
+                "规则-工具使用最佳实践.md"
+            ],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        },
+        "powershell_input_redirection": {
+            "problem": "PowerShell不支持输入重定向操作符<",
+            "symptoms": [
+                "使用 < 操作符时报错",
+                "ParserError: The '<' operator is reserved for future use",
+                "无法使用 command < file 语法"
+            ],
+            "root_cause": "PowerShell保留了<操作符用于未来使用，当前版本不支持",
+            "solution": {
+                "method": "使用Get-Content或临时文件方法",
+                "code_template": "# 方法1：使用Get-Content\nGet-Content file.txt | ssh ubuntu@服务器 \"cat > /目标文件\"\n\n# 方法2：使用scp\nscp file.txt ubuntu@服务器:/tmp/ && ssh ubuntu@服务器 \"cat /tmp/file.txt > /目标文件\"",
+                "verification": "命令正常执行",
+                "success_rate": "100%"
+            },
+            "related_files": [],
+            "solved_date": "2025-10-05",
+            "status": "已解决"
+        }
+    },
+    "search_strategy": {
+        "step1": "根据问题症状搜索solutions",
+        "step2": "找到匹配的solution后，直接应用其method",
+        "step3": "如果找不到，才尝试新方法",
+        "step4": "新方法成功后，必须添加到此库"
+    },
+    "mandatory_check": {
+        "before_problem_solving": [
+            "必须先搜索此解决方案库",
+            "找到解决方案则直接应用",
+            "不要重复尝试已知失败的方法"
+        ]
+    }
+}

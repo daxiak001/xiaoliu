@@ -1,0 +1,1123 @@
+{
+    "version": "5.0.0",
+    "last_updated": "2025-10-05T17:40:33.000036",
+    "total_iron_rules": 45,
+    "description": "小柳系统v5.0完整铁律库 - 整合v3.0开发规范 + v4.3工作流程 + 新增铁律",
+    "integration_source": {
+        "v3.0": "39条开发铁律（代码级规范）",
+        "v4.3": "工作流程铁律（铁律0-9）",
+        "v5.0_new": "6条新增铁律（超级铁律和系统规则）"
+    },
+    "iron_rules": [
+        {
+            "id": "IR-001",
+            "title": "开发全权负责，不中途询问",
+            "content": "在任何开发任务中，AI必须全权负责完成从0到1的整个流程，包括开发、测试、验证、修复，不允许中途停下询问用户，所有问题必须自主解决。",
+            "category": "development_process",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "开发",
+                "全权负责",
+                "不询问",
+                "自主解决"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须全权负责完成从0到1的整个流程，自主解决所有问题"
+        },
+        {
+            "id": "IR-002",
+            "title": "测试前后必须关闭应用",
+            "content": "测试前必须关闭之前打开的应用，清理后台进程，确保测试环境干净。测试后必须关闭测试应用，清理测试数据，释放系统资源。",
+            "category": "testing",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "测试",
+                "关闭应用",
+                "清理环境"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在测试前后关闭应用并清理环境"
+        },
+        {
+            "id": "IR-003",
+            "title": "必须使用配置变量和参数传递",
+            "content": "函数、变量、文件路径必须使用配置变量、配置文件或参数传递，不允许硬编码值。",
+            "category": "code_quality",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "配置",
+                "变量",
+                "参数传递"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须使用配置变量、配置文件或参数传递所有配置项",
+            "note": "从禁止硬编码改为正面需求，执行率预期从90%提升到95%"
+        },
+        {
+            "id": "IR-004",
+            "title": "中文注释使用//结尾",
+            "content": "所有代码注释必须使用中文，并以 // 结尾，遵循Key Spirit脚本写作风格。",
+            "category": "code_style",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "注释",
+                "中文",
+                "//"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须使用中文注释并以//结尾"
+        },
+        {
+            "id": "IR-005",
+            "title": "错误修复前先解释原因",
+            "content": "发现错误时，必须先分析错误原因和解决方案，向用户解释后再进行修复。",
+            "category": "error_handling",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "错误",
+                "解释",
+                "修复"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须先分析并解释错误原因，获得确认后再修复"
+        },
+        {
+            "id": "IR-006",
+            "title": "VBScript必须使用正确2D数组语法",
+            "content": "使用VBScript 2D数组时，必须使用 array(i,j) 语法，数组必须用 Dim array() 和 ReDim 初始化。",
+            "category": "vbscript_syntax",
+            "severity": "high",
+            "applicable_to": "vbscript_projects",
+            "keywords": [
+                "VBScript",
+                "2D数组",
+                "语法"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须使用array(i,j)语法和正确的数组初始化"
+        },
+        {
+            "id": "IR-007",
+            "title": "必须使用统一延迟系统算法",
+            "content": "处理延迟时，必须使用统一的延迟系统算法，不允许定义大量单独的延迟变量。",
+            "category": "code_architecture",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "延迟",
+                "统一算法",
+                "系统"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须使用统一的延迟系统算法管理所有延迟"
+        },
+        {
+            "id": "IR-008",
+            "title": "开发环境必须符合要求",
+            "content": "所有脚本开发必须基于按键精灵手机助手软件，运行于安卓模拟器中，针对Key Qianling移动版本环境。",
+            "category": "development_environment",
+            "severity": "critical",
+            "applicable_to": "automation_projects",
+            "keywords": [
+                "按键精灵",
+                "安卓模拟器",
+                "Key Qianling"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须使用按键精灵手机助手+安卓模拟器环境开发"
+        },
+        {
+            "id": "IR-009",
+            "title": "必须完整测试确保无BUG后交付",
+            "content": "开发完成后必须进行完整的功能测试、边界测试、异常测试，确保无BUG、符合设计初衷后才能交付。",
+            "category": "quality_assurance",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "测试",
+                "无BUG",
+                "质量"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须进行完整测试并确保无BUG后才能交付"
+        },
+        {
+            "id": "IR-010",
+            "title": "开发前必须检查模块是否已存在",
+            "content": "开始开发任何模块前，必须先检查是否已经开发过相同或类似功能的模块，避免重复开发。",
+            "category": "development_process",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "模块",
+                "检查",
+                "重复开发"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在开发前检查模块清单避免重复开发"
+        },
+        {
+            "id": "IR-011",
+            "title": "修复BUG前必须搜索历史修复方案",
+            "content": "修复BUG前，必须先搜索BUG修复历史，如果发现已经修复过类似BUG，直接应用历史成功方案。",
+            "category": "bug_fixing",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "BUG",
+                "历史修复",
+                "搜索"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须先搜索BUG修复历史，找到则直接应用成功方案"
+        },
+        {
+            "id": "IR-012",
+            "title": "必须检查并避免使用失败方法",
+            "content": "编码时必须检查失败教训库，确认使用的方法、语法或方案已验证有效。",
+            "category": "code_quality",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "失败方法",
+                "检查",
+                "教训"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须检查失败教训库并使用已验证有效的方法",
+            "note": "从禁止失败方法改为必须使用有效方法"
+        },
+        {
+            "id": "IR-013",
+            "title": "成功修复BUG后必须记录到历史",
+            "content": "每次成功修复BUG后，必须详细记录BUG描述、修复方法、验证结果到BUG修复历史库。",
+            "category": "knowledge_management",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "BUG修复",
+                "记录",
+                "历史"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须记录每次成功的BUG修复到历史库"
+        },
+        {
+            "id": "IR-014",
+            "title": "模块开发完成后必须测试和注册",
+            "content": "模块开发完成后必须进行完整测试，测试通过后必须注册到模块清单中，包括功能描述、文件位置、接口说明。",
+            "category": "knowledge_management",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "模块",
+                "测试",
+                "注册",
+                "清单"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须测试通过后注册模块到清单",
+            "note": "标题修正为既包含测试又包含注册"
+        },
+        {
+            "id": "IR-015",
+            "title": "必须自动识别并保存永久铁律",
+            "content": "对话中出现新的永久性要求时，必须自动识别并保存到全局永久铁律库，确保后续所有窗口都能遵守。",
+            "category": "knowledge_management",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "永久铁律",
+                "自动识别",
+                "保存",
+                "全局"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须自动识别新铁律并保存到全局库",
+            "note": "强调保存到全局库"
+        },
+        {
+            "id": "IR-016",
+            "title": "必须设置测试超时保护机制",
+            "content": "测试代码时必须设置超时保护和最大执行次数，防止测试卡死。达到最大次数后自动退出并记录失败原因。",
+            "category": "testing_safety",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "测试",
+                "超时",
+                "保护机制",
+                "最大次数"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须设置超时时间（30-300秒）和最大执行次数",
+            "requirements": [
+                "每个测试必须设置超时时间（建议30-300秒）",
+                "循环必须有明确的退出条件和最大次数限制",
+                "达到最大次数后自动标记为失败并继续下一步"
+            ],
+            "note": "从禁止无限循环改为必须设置保护"
+        },
+        {
+            "id": "IR-017",
+            "title": "必须优先考虑热修改开发模式",
+            "content": "开发代码时必须优先考虑热修改能力，支持测试运行时暂停、修改、继续执行，最大化开发效率。",
+            "category": "development_efficiency",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "热修改",
+                "动态调试",
+                "效率优化"
+            ],
+            "execution_rate_target": "80%",
+            "positive_expression": "必须设计支持热修改的代码结构",
+            "applicable_scenarios": "除了必须关闭才能修改的代码外，其他场景优先使用热修改"
+        },
+        {
+            "id": "IR-018",
+            "title": "BUG修复5次失败必须换方法",
+            "content": "同一BUG修复尝试超过5次仍未成功，必须切换不同方案、从互联网搜索新方法或评估能力升级需求。",
+            "category": "bug_fixing_strategy",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "BUG修复",
+                "方案切换",
+                "互联网搜索",
+                "能力升级"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在第5次失败后立即切换修复方案",
+            "actions_required": [
+                "第5次失败后立即停止当前方案",
+                "分析失败原因，总结教训",
+                "搜索互联网相关解决方案",
+                "评估是否需要能力升级",
+                "记录所有失败尝试"
+            ]
+        },
+        {
+            "id": "IR-019",
+            "title": "必须充分利用外部工具能力",
+            "content": "必须充分利用AI的扩展能力（手、脚、眼睛等工具）协助开发和测试，包括屏幕截图、UI交互、文件操作、网络请求等。",
+            "category": "tool_utilization",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "外部工具",
+                "能力扩展",
+                "协助开发"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须使用屏幕截图、UI交互等工具辅助开发",
+            "available_tools": [
+                "屏幕截图工具",
+                "UI交互工具",
+                "文件操作工具",
+                "网络请求工具"
+            ]
+        },
+        {
+            "id": "IR-020",
+            "title": "必须执行三重验证测试标准",
+            "content": "所有测试必须同时满足：1）输出详细日志 2）保存关键步骤截图 3）实际执行验证。三者缺一不可。",
+            "category": "testing_validation",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "日志",
+                "截图",
+                "执行验证",
+                "三重标准"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须同时提供日志、截图和实际执行验证",
+            "validation_standards": {
+                "日志": "每个关键步骤都有时间戳日志",
+                "截图": "关键界面和结果必须截图保存",
+                "执行": "必须真实执行，查看实际反馈"
+            },
+            "note": "从禁止模拟测试改为必须三重验证"
+        },
+        {
+            "id": "IR-021",
+            "title": "项目完成必须5轮完整测试",
+            "content": "项目开发完成后，必须从0到1完整流程连续测试5轮，全部通过才算成功。",
+            "category": "final_testing",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "完整测试",
+                "5轮验证",
+                "所有功能"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须连续5轮完整流程测试全部通过",
+            "testing_scope": [
+                "数据请求和返回值验证",
+                "所有按钮点击响应测试",
+                "输入框内容反馈验证",
+                "页面数据显示正确性",
+                "网络请求和响应验证",
+                "错误处理和异常情况"
+            ]
+        },
+        {
+            "id": "IR-022",
+            "title": "必须添加多场景兼容性逻辑",
+            "content": "遇到多变场景问题（如不同语言、字体、符号、位置、元素），必须添加识别和兼容逻辑，确保代码能处理所有可能的情况。",
+            "category": "compatibility",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "多场景",
+                "兼容性",
+                "识别逻辑",
+                "自适应"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须添加多语言、多场景的识别和兼容逻辑",
+            "correct_approach": "添加多语言识别逻辑：if(中文) or if(英文) or if(其他语言)",
+            "note": "从禁止修改代码改为必须添加兼容逻辑"
+        },
+        {
+            "id": "IR-023",
+            "title": "所有代码必须设计调用接口",
+            "content": "开发代码时必须设计清晰的调用接口，包括函数签名、参数定义、返回值说明，方便后续调用和测试使用。",
+            "category": "code_architecture",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T16:00:00",
+            "keywords": [
+                "接口设计",
+                "函数签名",
+                "可调用",
+                "可测试"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须为每个模块设计清晰的调用接口",
+            "requirements": [
+                "明确的函数名称和用途说明",
+                "完整的参数列表和类型定义",
+                "清晰的返回值说明",
+                "简单的调用示例",
+                "独立的测试接口"
+            ],
+            "examples": {
+                "good": "function UserLogin(username: String, password: String): Boolean\n  // 返回：登录成功true，失败false\n  // 测试接口：TestUserLogin()",
+                "bad": "function DoSomething(a, b)\n  // 没有类型，没有说明，不知道返回什么"
+            }
+        },
+        {
+            "id": "IR-024",
+            "title": "对话刷新触发机制",
+            "content": "长对话后必须刷新记忆，防止规则遗忘。触发条件：超过15轮对话/超过15000字符/超过30分钟/编码前/BUG修复前，必须重新读取必读要求文档和相关规范，确保规则记忆新鲜。",
+            "category": "memory_management",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T16:50:00",
+            "keywords": [
+                "对话刷新",
+                "记忆管理",
+                "规则遗忘",
+                "长对话"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在触发条件时主动刷新记忆",
+            "trigger_conditions": [
+                "超过15轮对话 → 自动刷新必读要求",
+                "超过15000字符 → 自动更新规范",
+                "超过30分钟 → 自动更新项目记忆",
+                "编码前检查 → 重读相关规范文档",
+                "BUG修复前 → 查阅BUG修复档案"
+            ],
+            "refresh_actions": [
+                "重新读取项目必读要求文档",
+                "重新读取小柳全局铁律",
+                "重新读取失败教训库",
+                "主动告知用户正在刷新记忆"
+            ]
+        },
+        {
+            "id": "IR-025",
+            "title": "自动存档系统",
+            "content": "防止数据丢失的关键机制。必须在重要节点自动存档，包括：每日23:00、重要里程碑完成后、文件修改累计10次、长对话结束后。存档保留策略：每日存档保留30天，里程碑存档永久保留。",
+            "category": "data_protection",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T16:50:00",
+            "keywords": [
+                "存档",
+                "备份",
+                "数据保护",
+                "历史版本"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须在触发条件时自动存档",
+            "trigger_conditions": [
+                "每日23:00自动存档",
+                "重要里程碑完成后存档",
+                "文件修改累计10次自动存档",
+                "长对话结束后存档",
+                "用户手动要求存档"
+            ],
+            "retention_policy": {
+                "daily_backup": "保留30天",
+                "milestone_backup": "永久保留",
+                "cumulative_backup": "保留最近20个",
+                "conversation_backup": "保留最近10个",
+                "emergency_backup": "保留最近7个"
+            }
+        },
+        {
+            "id": "IR-026",
+            "title": "新手开发者AI主动提问",
+            "content": "当识别到用户可能是新手或需求不够详细时，AI必须主动提问和提醒。包括：需求分析阶段询问细节、技术选型提供多方案对比、主动提醒边界条件和异常处理、询问用户体验和安全考虑。",
+            "category": "user_assistance",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T16:50:00",
+            "keywords": [
+                "主动提问",
+                "新手辅助",
+                "需求分析",
+                "细节提醒"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须主动提问和提醒关键细节",
+            "proactive_questions": [
+                "需求分析：功能细节、使用场景、预期效果",
+                "技术选型：多方案对比、优缺点说明",
+                "架构设计：扩展需求、接口设计",
+                "开发过程：分支情况、异常处理",
+                "测试阶段：测试场景、边界条件"
+            ],
+            "reminder_checklist": [
+                "输入验证",
+                "异常处理",
+                "边界条件",
+                "用户体验",
+                "数据安全",
+                "性能考虑",
+                "兼容性",
+                "维护性"
+            ]
+        },
+        {
+            "id": "IR-027",
+            "title": "大项目模块化开发策略",
+            "content": "大项目必须模块化拆分开发，避免上下文限制。策略：需求分解（大项目→核心模块→子功能→具体函数）、模块化拆分（独立模块20-300行）、接口设计优先、阶段性开发、上下文只保留当前模块、模块完成后创建文档和注册。",
+            "category": "development_strategy",
+            "severity": "high",
+            "applicable_to": "large_projects",
+            "created_date": "2025-10-03T16:50:00",
+            "keywords": [
+                "模块化",
+                "大项目",
+                "上下文管理",
+                "分阶段开发"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须对大项目进行模块化拆分和阶段性开发",
+            "development_process": [
+                "需求分解：大项目 → 核心模块 → 子功能 → 具体函数",
+                "模块化拆分：独立功能模块（20-300行）",
+                "接口设计优先：先定义接口，再实现功能",
+                "阶段性开发：按优先级分阶段完成",
+                "上下文管理：只保留当前需要的代码片段",
+                "外部文档：保存详细实现和使用说明"
+            ],
+            "module_completion": [
+                "创建模块使用文档",
+                "更新模块注册表",
+                "保存到外部文件",
+                "更新依赖关系图",
+                "记忆刷新"
+            ]
+        },
+        {
+            "id": "IR-028",
+            "title": "前置检查清单强制执行",
+            "content": "在执行关键操作前，必须强制执行对应的前置检查清单。包括：开发代码前检查清单、测试代码前检查清单、修改代码前检查清单、回复用户前检查清单。所有must_pass=true的项目必须通过才能继续。",
+            "category": "quality_assurance",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T16:50:00",
+            "keywords": [
+                "前置检查",
+                "检查清单",
+                "质量保证",
+                "规则遵守"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在执行关键操作前完成前置检查清单",
+            "check_list_file": "D:\\xiaoliu\\memory\\pre_check_lists.json",
+            "check_types": [
+                "开发代码前：检查重复、接口设计、硬编码、注释风格等",
+                "测试代码前：三重验证、环境清理、超时保护、5轮测试等",
+                "修改代码前：只改错误位置、查历史经验、多场景兼容等",
+                "回复用户前：任务完成度、自测情况、模块注册等"
+            ],
+            "enforcement": {
+                "critical": "🔴 阻断 - 不通过则不能继续",
+                "high": "🟡 警告 - 强烈建议修正，记录违规",
+                "medium": "🟢 提示 - 提醒注意，不阻断执行"
+            }
+        },
+        {
+            "id": "IR-029",
+            "title": "主动记忆管理系统",
+            "content": "长对话中必须主动管理记忆，防止遗忘用户要求。每5轮对话自动生成摘要提取关键要求，记忆分级管理（P0永不丢失、P1定期强化、P2按需回顾），开发前/回复前主动检查是否遗漏要求，使用结构化记忆索引便于快速查找。",
+            "category": "memory_management",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "记忆管理",
+                "长对话",
+                "要求遗忘",
+                "摘要生成"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须每5轮对话生成摘要，P0级要求永不丢失",
+            "core_mechanisms": [
+                "每5轮对话自动生成摘要（提取用户要求、已完成任务、待办事项）",
+                "记忆分级：P0用户明确要求（永不丢失）、P1项目核心架构（定期强化）、P2实现细节（按需回顾）",
+                "主动检查：开发前检查是否记得相关要求、回复前检查是否遗漏用户要求",
+                "结构化记忆索引：{user_requirements, completed_modules, pending_tasks, dependency_map, key_decisions}"
+            ],
+            "triggers": [
+                "每5轮对话后自动触发摘要生成",
+                "开发代码前触发记忆检查",
+                "回复用户前触发遗漏检查",
+                "切换任务时触发状态保存"
+            ],
+            "expected_improvement": {
+                "15轮后记忆保持率": "从20%提升至85%（+325%）",
+                "用户要求遗忘率": "从80%降至5%（-94%）",
+                "重复询问次数": "从3-5次降至0-1次（-80%）"
+            }
+        },
+        {
+            "id": "IR-030",
+            "title": "强制自我验证与怀疑机制",
+            "content": "禁止未经验证就声称完成。必须执行强制验证：代码写完后必须运行测试、声称完成必须附带证据（日志/截图/测试结果）、BUG修复必须重现问题后验证解决。禁止使用'已完成''应该可以''问题已解决'等未经验证的表述。",
+            "category": "quality_assurance",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "自我验证",
+                "过度自信",
+                "证据要求",
+                "测试强制"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须有测试证据才能声称完成",
+            "prohibited_expressions": [
+                "❌ '已完成'（除非有测试证据）",
+                "❌ '应该可以'（除非有实际验证）",
+                "❌ '问题已解决'（除非有验证结果）"
+            ],
+            "required_expressions": [
+                "✅ '代码已写完，测试结果：XXX'",
+                "✅ '已验证3次，确认正常'",
+                "✅ '根据测试，功能正常（附日志）'"
+            ],
+            "verification_checkpoints": [
+                "代码写完 → 必须：语法检查、运行测试",
+                "声称完成 → 必须：实际运行测试、附带证据",
+                "声称修复 → 必须：重现问题、验证解决",
+                "给出方案 → 必须：说明这是理论方案需验证"
+            ],
+            "self_doubt_checklist": [
+                "我测试过了吗？",
+                "我考虑边界条件了吗？",
+                "我验证依赖关系了吗？",
+                "我只是理论推理吗？"
+            ],
+            "expected_improvement": {
+                "未测试就声称完成率": "从65%降至5%（-92%）",
+                "第一次交付成功率": "从35%提升至85%（+143%）",
+                "用户返工次数": "从2.5次降至0.3次（-88%）"
+            }
+        },
+        {
+            "id": "IR-031",
+            "title": "需求确认与复述机制",
+            "content": "开发前必须复述需求防止理解偏差。格式：'我的理解是：核心功能XXX、实现方式XXX、不包含XXX，请确认？'。遵循最小化实现原则，优先最简方案。深层需求挖掘：用户说问题问预期效果、说功能问使用场景、说修改问原因。",
+            "category": "requirement_management",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "需求确认",
+                "复述机制",
+                "理解偏差",
+                "最小化实现"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须在开发前复述需求并获得确认",
+            "mandatory_paraphrase_format": "我的理解是：\n- 核心功能：XXX\n- 实现方式：XXX\n- 不包含：XXX\n请确认我的理解是否正确？",
+            "complexity_assessment": [
+                "简单需求（<50行）→ 复述确认",
+                "中等需求（50-200行）→ 复述+方案说明",
+                "复杂需求（>200行）→ 复述+多方案对比"
+            ],
+            "minimalist_principle": [
+                "优先实现最简方案",
+                "说明：这是最简实现，如需XX功能可扩展",
+                "禁止未经确认的过度设计"
+            ],
+            "deep_requirement_mining": [
+                "用户说问题 → 问：预期效果是什么？",
+                "用户说功能 → 问：使用场景是什么？",
+                "用户说修改 → 问：为什么需要修改？"
+            ],
+            "expected_improvement": {
+                "需求理解准确率": "从55%提升至90%（+64%）",
+                "过度设计率": "从35%降至8%（-77%）",
+                "一次满足需求率": "从60%提升至92%（+53%）"
+            }
+        },
+        {
+            "id": "IR-032",
+            "title": "代码质量阈值与强制重构",
+            "content": "必须维护代码质量，满足任一条件立即重构：同一文件修改超过3次、函数复杂度>10层嵌套、代码行数增长>50%、临时方案标记>7天。每次修改后执行代码清理：删除注释代码、删除未使用变量、提取重复代码、处理积压TODO。设置质量门禁：修改后质量分不能下降。",
+            "category": "code_quality",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "代码质量",
+                "强制重构",
+                "质量阈值",
+                "技术债务"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须在触发条件时立即重构，保持代码质量",
+            "refactoring_triggers": [
+                "同一文件修改超过3次",
+                "函数复杂度>10（嵌套层级）",
+                "代码行数增长>50%",
+                "出现'临时方案'标记超过7天"
+            ],
+            "code_cleanup_checklist": [
+                "扫描注释掉的代码 → 删除",
+                "扫描未使用的变量 → 删除",
+                "扫描重复代码 → 提取函数",
+                "扫描TODO超过3个 → 立即处理"
+            ],
+            "quality_gate": [
+                "修改前：记录代码质量分数",
+                "修改后：质量分数不能下降",
+                "下降 → 必须重构"
+            ],
+            "temporary_solution_management": "添加时标记：// TEMP-20251003-原因-预计X天内重构；超期自动提醒重构",
+            "expected_improvement": {
+                "代码质量维持率": "从40%提升至85%（+113%）",
+                "5次修改后可读性": "从30分提升至75分（+150%）",
+                "重构及时率": "从10%提升至80%（+700%）"
+            }
+        },
+        {
+            "id": "IR-033",
+            "title": "任务队列与状态管理",
+            "content": "多任务必须队列化处理防止状态混乱。收到多个任务自动排队按顺序执行，使用状态跟踪表记录文件版本和任务状态。工具调用前置检查：修改文件前检查是否已读最新版本、分析代码前检查是否已读取文件。遵循单任务完成原则，除非用户明确要求并发。",
+            "category": "task_management",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "任务队列",
+                "状态管理",
+                "并发控制",
+                "工具调用"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须将多任务队列化，一次只执行一个任务",
+            "task_queue_format": "收到3个任务，执行顺序：\n1️⃣ [进行中] 任务A\n2️⃣ [等待中] 任务B\n3️⃣ [等待中] 任务C",
+            "state_tracking_table": {
+                "file_states": {
+                    "structure": "文件路径 → {last_read, last_modified, current_version}"
+                },
+                "task_states": {
+                    "structure": "任务ID → {status: completed/in_progress/pending}"
+                }
+            },
+            "tool_call_preconditions": [
+                "修改文件前 → 检查：是否已读取最新版本？",
+                "分析代码前 → 检查：是否已读取文件？",
+                "保存文件前 → 检查：是否有修改内容？"
+            ],
+            "single_task_principle": [
+                "除非用户明确要求并发",
+                "否则一次只做一个任务",
+                "任务完成后明确告知，再开始下一个"
+            ],
+            "expected_improvement": {
+                "多任务完成率": "从40%提升至95%（+138%）",
+                "工具调用正确率": "从65%提升至95%（+46%）",
+                "状态一致性": "从55%提升至98%（+78%）"
+            }
+        },
+        {
+            "id": "IR-034",
+            "title": "错误优先开发原则",
+            "content": "开发时必须错误优先于主逻辑。开发前先列出所有可能错误，先写错误处理代码，再写主要逻辑。强制错误检查清单：输入参数检查（类型/范围/空值）、外部依赖检查（文件/网络/数据库）、异常捕获try-catch、错误日志记录、错误返回值设计。必须考虑边界条件。",
+            "category": "error_handling",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "错误处理",
+                "异常处理",
+                "边界条件",
+                "防御性编程"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须先写错误处理代码，再写主要逻辑",
+            "error_first_thinking": [
+                "开发前先列出所有可能错误",
+                "先写错误处理代码",
+                "再写主要逻辑"
+            ],
+            "mandatory_error_checklist": [
+                "✅ 输入参数检查（类型、范围、空值）",
+                "✅ 外部依赖检查（文件、网络、数据库）",
+                "✅ 异常捕获（try-catch）",
+                "✅ 错误日志记录",
+                "✅ 错误返回值设计"
+            ],
+            "boundary_conditions_checklist": [
+                "✅ 空值、空数组、空字符串",
+                "✅ 超大值、超小值",
+                "✅ 特殊字符、编码问题",
+                "✅ 并发冲突",
+                "✅ 网络超时"
+            ],
+            "expected_improvement": {
+                "错误处理覆盖率": "从30%提升至95%（+217%）",
+                "生产环境崩溃率": "降低85%"
+            }
+        },
+        {
+            "id": "IR-035",
+            "title": "性能基准与优化要求",
+            "content": "代码必须满足性能基准：单次操作<100ms、批量操作<3s、内存占用<500MB，超过基准必须优化。大数据处理：>1000条考虑分页、>10000条考虑批量、>100000条考虑流式处理。算法复杂度：禁止O(n³)以上算法，嵌套循环必须说明原因。",
+            "category": "performance",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "性能优化",
+                "算法复杂度",
+                "大数据处理",
+                "性能基准"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须满足性能基准，超过基准必须优化",
+            "performance_benchmarks": {
+                "single_operation": "< 100ms",
+                "batch_operation": "< 3s",
+                "memory_usage": "< 500MB"
+            },
+            "big_data_processing": [
+                ">1000条 → 考虑分页",
+                ">10000条 → 考虑批量处理",
+                ">100000条 → 考虑流式处理"
+            ],
+            "algorithm_complexity": [
+                "禁止O(n³)以上算法",
+                "嵌套循环必须说明原因",
+                "优先使用O(n)或O(n log n)算法"
+            ],
+            "expected_improvement": {
+                "大数据处理速度": "提升3600倍（3小时→3秒）",
+                "性能问题率": "从55%降至10%（-82%）"
+            }
+        },
+        {
+            "id": "IR-036",
+            "title": "安全优先原则",
+            "content": "代码必须遵守安全原则。禁止硬编码敏感信息（密码/密钥/token使用环境变量，API密钥使用加密配置）。所有用户输入必须验证，使用白名单优于黑名单。安全检查清单：SQL注入防护（参数化查询）、XSS防护、CSRF防护、权限检查、敏感信息脱敏。",
+            "category": "security",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "安全",
+                "SQL注入",
+                "XSS防护",
+                "敏感信息"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须遵守安全原则，所有输入必须验证",
+            "prohibited_patterns": [
+                "❌ 硬编码密码、密钥、token",
+                "❌ 字符串拼接SQL（必须用参数化查询）",
+                "❌ eval()执行用户代码",
+                "❌ os.system()执行用户命令"
+            ],
+            "sensitive_info_handling": [
+                "密码、密钥、token → 环境变量",
+                "API密钥 → 配置文件（加密存储）",
+                "敏感日志 → 脱敏处理"
+            ],
+            "input_validation": [
+                "所有用户输入必须验证",
+                "白名单验证优于黑名单",
+                "参数化查询防止SQL注入"
+            ],
+            "security_checklist": [
+                "✅ SQL注入防护",
+                "✅ XSS防护",
+                "✅ CSRF防护",
+                "✅ 权限检查",
+                "✅ 敏感信息脱敏"
+            ],
+            "expected_improvement": {
+                "安全漏洞率": "从45%降至5%（-89%）",
+                "被攻击风险": "降低80%"
+            }
+        },
+        {
+            "id": "IR-037",
+            "title": "文档同步强制要求",
+            "content": "代码修改必须同步更新文档。代码修改→同步更新注释和文档、接口修改→同步更新API文档、新功能→同步更新README和使用说明。文档必须包含：功能说明、使用示例、参数说明、返回值说明、注意事项。",
+            "category": "documentation",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "文档同步",
+                "API文档",
+                "README",
+                "代码注释"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须在代码修改时同步更新文档",
+            "sync_requirements": [
+                "代码修改 → 同步更新注释和文档",
+                "接口修改 → 同步更新API文档",
+                "新功能 → 同步更新README",
+                "配置变更 → 同步更新配置说明"
+            ],
+            "documentation_requirements": [
+                "功能说明",
+                "使用示例",
+                "参数说明",
+                "返回值说明",
+                "注意事项"
+            ],
+            "expected_improvement": {
+                "文档准确率": "从40%提升至90%（+125%）"
+            }
+        },
+        {
+            "id": "IR-038",
+            "title": "命名规范强制统一",
+            "content": "项目必须统一命名风格。项目开始时确定命名规范（驼峰/下划线/大驼峰），所有代码遵循统一风格。变量名必须有意义，禁止a/b/c/temp/data等无意义命名。函数名必须动词开头体现功能。类名必须名词体现职责。",
+            "category": "code_style",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "命名规范",
+                "代码风格",
+                "可读性"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须遵循统一的命名规范",
+            "naming_conventions": [
+                "项目开始时确定命名风格",
+                "全项目统一风格（不混用）",
+                "变量名：有意义的名词",
+                "函数名：动词开头（getUserName/calculateTotal）",
+                "类名：名词（UserService/DataProcessor）"
+            ],
+            "prohibited_names": [
+                "❌ a, b, c, x, y, z",
+                "❌ temp, data, info, obj",
+                "❌ test, demo, tmp"
+            ],
+            "expected_improvement": {
+                "代码可读性": "提升40%"
+            }
+        },
+        {
+            "id": "IR-039",
+            "title": "标准化日志系统",
+            "content": "必须使用标准化日志格式：[时间] [级别] [模块] [消息] [上下文]。日志级别：DEBUG/INFO/WARNING/ERROR/CRITICAL。关键操作必须记录日志：函数入口/出口、错误异常、状态变更、外部调用。日志必须包含足够上下文信息便于调试。",
+            "category": "logging",
+            "severity": "medium",
+            "applicable_to": "all_projects",
+            "created_date": "2025-10-03T17:00:00",
+            "keywords": [
+                "日志系统",
+                "日志格式",
+                "日志级别",
+                "调试"
+            ],
+            "execution_rate_target": "90%",
+            "positive_expression": "必须使用标准化日志格式记录关键操作",
+            "log_format": "[时间] [级别] [模块] [消息] [上下文]",
+            "log_example": "[2025-10-03 16:00:00] [ERROR] [UserService] [登录失败] {user_id:123, reason:\"密码错误\"}",
+            "log_levels": [
+                "DEBUG：调试信息",
+                "INFO：一般信息",
+                "WARNING：警告",
+                "ERROR：错误",
+                "CRITICAL：严重错误"
+            ],
+            "mandatory_logging": [
+                "函数入口/出口（含参数和返回值）",
+                "错误和异常",
+                "状态变更",
+                "外部调用（API/数据库）"
+            ],
+            "expected_improvement": {
+                "调试效率": "提升50%"
+            }
+        },
+        {
+            "id": "IR-040",
+            "title": "超级铁律-0：用户问题必须立即解决并自动升级",
+            "content": "用户提出的任何问题必须立即解决，0秒延迟。解决后必须自动将解决方案升级到系统中，确保下次遇到相同问题可以直接应用。优先级超越所有其他铁律。",
+            "category": "super_iron_law",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "用户问题",
+                "立即解决",
+                "自动升级",
+                "0秒延迟"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须立即解决用户问题并自动升级到系统",
+            "priority": "highest",
+            "created": "2025-10-05",
+            "source": "v4.3-铁律-0"
+        },
+        {
+            "id": "IR-041",
+            "title": "服务器连接配置必须永久记住",
+            "content": "SSH登录端口22，小柳系统API端口8889，端口8888已作废。所有服务器操作必须使用正确的端口配置，不允许混淆或遗忘。",
+            "category": "server_configuration",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "服务器",
+                "SSH",
+                "端口22",
+                "API端口8889"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须使用SSH端口22和API端口8889",
+            "created": "2025-10-05",
+            "source": "v4.3-铁律-5"
+        },
+        {
+            "id": "IR-042",
+            "title": "系统问题解决方案库强制使用",
+            "content": "遇到系统问题时，必须先查询系统问题解决方案库。如果找到解决方案，直接应用；如果没有找到，尝试新方法解决后，必须将成功的解决方案上传到服务器的解决方案库中。",
+            "category": "problem_solving",
+            "severity": "critical",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "解决方案库",
+                "系统问题",
+                "先查询",
+                "后上传"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须先查解决方案库，成功后上传新方案",
+            "created": "2025-10-05",
+            "source": "v4.3-铁律-6"
+        },
+        {
+            "id": "IR-043",
+            "title": "直接在服务器上修改文件",
+            "content": "升级小柳系统时，禁止在本地生成文件然后上传到服务器中修改。必须通过命令的方式直接在服务器上创建文件和修改添加。不允许发生在本地生成文件再上传到服务器的行为。",
+            "category": "system_upgrade",
+            "severity": "critical",
+            "applicable_to": "system_maintenance",
+            "keywords": [
+                "服务器修改",
+                "禁止本地生成",
+                "直接命令",
+                "系统升级"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "必须直接在服务器上使用命令修改文件",
+            "created": "2025-10-05",
+            "source": "v4.3-铁律-7和铁律-8"
+        },
+        {
+            "id": "IR-044",
+            "title": "报告和方案在本地生成",
+            "content": "所有的方案和报告不要在小柳服务器上生成，在本地生成。只有对小柳系统的规则、要求、铁律等相关事情的时候需要直接从服务器读取、修改、创建、删除等任务的执行。",
+            "category": "document_management",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "报告",
+                "方案",
+                "本地生成",
+                "系统规则服务器操作"
+            ],
+            "execution_rate_target": "100%",
+            "positive_expression": "报告方案本地生成，系统规则服务器操作",
+            "created": "2025-10-05",
+            "source": "v4.3-铁律-9"
+        },
+        {
+            "id": "IR-045",
+            "title": "工具使用最佳实践",
+            "content": "使用工具时优先考虑使用最佳工具运行。如果出现工具无法使用时，先从小柳系统中找到解决工具的办法，然后再执行命令。如果没有找到解决的办法就自己找办法修复，成功解决以后把这个方法上传到小柳服务器中。像类似的用工具出现乱码、用工具出现无法自动退出等问题必须解决，不允许绕过问题换其他方法尝试。",
+            "category": "tool_usage",
+            "severity": "high",
+            "applicable_to": "all_projects",
+            "keywords": [
+                "工具使用",
+                "最佳实践",
+                "问题解决",
+                "不绕过"
+            ],
+            "execution_rate_target": "95%",
+            "positive_expression": "必须彻底解决工具问题，不允许绕过",
+            "created": "2025-10-05",
+            "source": "v4.3-规则-1"
+        }
+    ],
+    "execution_statistics": {
+        "critical_rules": 18,
+        "high_rules": 20,
+        "medium_rules": 7,
+        "total_rules": 45,
+        "expected_execution_rate": "95-98%"
+    },
+    "change_log": {
+        "v5.0.0": {
+            "date": "2025-10-05T17:40:33.000048",
+            "changes": [
+                "✅ 全量整合v3.0的39条开发铁律",
+                "✅ 整合v4.3的工作流程铁律（铁律0-9）",
+                "✅ 新增6条v5.0铁律（IR-040至IR-045）",
+                "✅ 总铁律数：45条",
+                "✅ Critical规则：18条",
+                "✅ High规则：20条",
+                "✅ Medium规则：7条",
+                "✅ 完整性：包含所有版本的优势",
+                "✅ 系统性：结构清晰，易于查找",
+                "✅ 可维护性：统一版本号，避免混乱"
+            ]
+        }
+    }
+}
