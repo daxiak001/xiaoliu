@@ -1,0 +1,29 @@
+[
+  {
+    "operation": "测试成功操作",
+    "success_count": 1,
+    "failure_count": 0,
+    "best_practices": [],
+    "prevention_rules": [],
+    "avg_execution_time": 0.0,
+    "last_updated": "2025-10-06T01:52:42.714502"
+  },
+  {
+    "operation": "测试失败操作",
+    "success_count": 0,
+    "failure_count": 1,
+    "best_practices": [],
+    "prevention_rules": [
+      {
+        "rule": "避免FileNotFoundError: 文件路径不存在，需要检查路径",
+        "error_type": "FileNotFoundError",
+        "error_message": "测试文件不存在",
+        "frequency": 1,
+        "first_seen": "2025-10-06T01:52:42.717637",
+        "last_seen": "2025-10-06T01:52:42.717640"
+      }
+    ],
+    "avg_execution_time": 0,
+    "last_updated": "2025-10-06T01:52:42.717646"
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "failure_1759686762714",
+    "operation": "测试失败操作",
+    "function": "test_failure",
+    "input": {
+      "args": "()",
+      "kwargs": "{}"
+    },
+    "error_type": "FileNotFoundError",
+    "error_message": "测试文件不存在",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/ubuntu/xiaoliu/core/auto_experience_recorder.py\", line 86, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ubuntu/xiaoliu/core/auto_experience_recorder.py\", line 448, in test_failure\n    raise FileNotFoundError(\"测试文件不存在\")\nFileNotFoundError: 测试文件不存在\n",
+    "execution_time": 0.0,
+    "timestamp": "2025-10-06T01:52:42.717277",
+    "root_cause": "文件路径不存在，需要检查路径",
+    "context": {
+      "os": "posix",
+      "cwd": "/home/ubuntu/xiaoliu",
+      "user": "ubuntu",
+      "timestamp": "2025-10-06T01:52:42.717365"
+    }
+  }
+]

@@ -11,7 +11,16 @@ class ErrorLearningSystem:
     """错误学习系统 - 记住每一个错误，永不重犯"""
     
     def __init__(self):
-        self.error_database_path = Path("D:/xiaoliu_skills/error_database.json")
+        # 自动检测操作系统，使用正确的路径
+        import os
+        if os.name == 'nt':  # Windows
+            self.error_database_path = Path("D:/xiaoliu_skills/error_database.json")
+        else:  # Linux/Unix
+            self.error_database_path = Path("/home/ubuntu/xiaoliu/data/error_database.json")
+        
+        # 确保目录存在
+        self.error_database_path.parent.mkdir(parents=True, exist_ok=True)
+        
         self.error_database = self.load_error_database()
         self.prevention_rules = []
     
